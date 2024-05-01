@@ -1,5 +1,3 @@
-C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.csproj.AssemblyReference.cache
-C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.File1.resources
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.csproj.GenerateResource.cache
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.AssemblyInfoInputs.cache
@@ -16,3 +14,5 @@ C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\ref\laba3.dll
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.pdb
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.genruntimeconfig.cache
+C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.AddFileForm.resources
+C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\laba3\obj\Debug\net5.0-windows\laba3.csproj.AssemblyReference.cache

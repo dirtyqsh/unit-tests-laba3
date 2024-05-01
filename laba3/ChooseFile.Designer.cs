@@ -1,7 +1,7 @@
 ﻿
 namespace laba3
 {
-    partial class File1
+    partial class AddFileForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,12 +31,12 @@ namespace laba3
         {
             this.SuspendLayout();
             // 
-            // File1
+            // AddFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "File1";
+            this.Name = "AddFileForm";
             this.Text = "Выбор файла";
             this.ResumeLayout(false);
 

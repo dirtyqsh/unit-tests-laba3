@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "3pGo0VmGoEEjMF+L5R+G5vwD+yqMmumJ+TIXxFDSCMKj3HdP6fCeVXuvM4Ijo6bIyCKI7Gz79NoQED4+ZaOC7g==",
-  "success": false,
+  "dgSpecHash": "oqgueInxb2ox1PfIwC8XmkNWlbk0weGpTlIZjzk7P3oPY2Gk8kFKzRy2nVtBYYWtXacXv8tm4pt3dX1zp4K/ig==",
+  "success": true,
   "projectFilePath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\UnitTestProject\\UnitTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kloun\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
@@ -70,15 +70,5 @@
     "C:\\Users\\kloun\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Проект laba3 несовместим с net5.0 (.NETCoreApp,Version=v5.0). Проект laba3 поддерживает: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "laba3",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace laba3
 {
-    public partial class File1 : Form
+    public partial class AddFileForm : Form
     {
-        public File1()
+        public AddFileForm()
         {
             InitializeComponent();
         }
 
         public static bool clickFile(string nameFile, string nameDir)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool checkNameFile(string nameFile)
         {
             throw new NotImplementedException();
         }

@@ -17,7 +17,7 @@ namespace laba3
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new File1());
+            Application.Run(new AddFileForm());
         }
     }
 }

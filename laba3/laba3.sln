@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "laba3", "laba3.csproj", "{30EF508C-7ED2-42BF-8D68-7943E4EE456B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "..\UnitTestProject\UnitTestProject.csproj", "{E1CDC614-EB8F-4CCF-B292-5D59A9DC232F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30EF508C-7ED2-42BF-8D68-7943E4EE456B} = {30EF508C-7ED2-42BF-8D68-7943E4EE456B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

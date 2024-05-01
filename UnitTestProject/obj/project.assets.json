@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
+    "net5.0-windows7.0": {
       "coverlet.collector/3.0.2": {
         "type": "package",
         "build": {
@@ -1256,13 +1256,16 @@
       },
       "laba3/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
           "bin/placeholder/laba3.dll": {}
         },
         "runtime": {
           "bin/placeholder/laba3.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -4960,7 +4963,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
+    "net5.0-windows7.0": [
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "NUnit >= 3.13.1",
       "NUnit3TestAdapter >= 3.17.0",
@@ -4985,15 +4988,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows7.0",
           "projectReferences": {
             "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\laba3\\laba3.csproj": {
               "projectPath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\laba3\\laba3.csproj"
@@ -5008,8 +5011,8 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows7.0",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -5046,16 +5049,5 @@
         "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Проект laba3 несовместим с net5.0 (.NETCoreApp,Version=v5.0). Проект laba3 поддерживает: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "laba3",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }
