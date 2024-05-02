@@ -16,7 +16,7 @@ namespace UnitTestProject
         public void T_001_clickFile_BaseFlow()
         {
             string nameFile = "completecode.pdf";
-            string nameDir = @"C:\study";
+            string nameDir = @"C:\";
 
             // ожидаемое
             bool expectedReturnValue = true;
@@ -39,10 +39,7 @@ namespace UnitTestProject
         [Test]
         public void T_002_clickFile_NameReserv()
         {
-            string nameFile = "CON.pdf";
-
-            List<string> failName = new List<string>() { "CON", "PRN", "AUX", "NUL", "COM0", "COM1", "COM2", "COM3", "COM4",
-                "COM5", "COM6", "COM7", "COM8", "COM9", "LPT0", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9" };
+            string nameFile = "CON"; // pdf?
 
             string expectedExceptionMessage = AddFileForm.ExceptionStrings.NameReserv;
 
@@ -63,9 +60,7 @@ namespace UnitTestProject
         [Test]
         public void T_003_clickFile_SymbolReserv()
         {
-            string nameFile = "complete*code.pdf";
-
-            List<string> failSymbol = new List<string>() { "/", @"\", "|", "*", ":", "?", @"""", "<", ">" };
+            string nameFile = "complete*code";
 
             string expectedExceptionMessage = AddFileForm.ExceptionStrings.SymbolReserv;
 
@@ -86,9 +81,7 @@ namespace UnitTestProject
         [Test]
         public void T_004_clickFile_Lenght()
         {
-            string nameFile = "completecodecompletecodecode.pdf";
-
-            int max_lenght = 25;
+            string nameFile = "completecodecompletecodecode";
 
             string expectedExceptionMessage = AddFileForm.ExceptionStrings.Lenght;
 
@@ -130,13 +123,14 @@ namespace UnitTestProject
         [Test]
         public void T_006_clickFile_NameDir()
         {
-            List<bool> queue = new List<bool>() { true, true, true, true, true };
+            string nameFile = "completecode.pdf";
+            string nameDir = @"hello:\hellooo-!";
 
             string expectedExceptionMessage = AddFileForm.ExceptionStrings.NameDir;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
-                AddFileForm.checkList(queue);
+                AddFileForm.clickFile(nameFile, nameDir);
             });
 
             Assert.IsNotNull(exception);
