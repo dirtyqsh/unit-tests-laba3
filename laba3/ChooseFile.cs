@@ -17,9 +17,18 @@ namespace laba3
             InitializeComponent();
         }
 
+        public static class ExceptionStrings
+        {
+            public const string NameReserv = "Невозможно использовать файл с зарезервированным именем.";
+            public const string SymbolReserv = "Невозможно использовать файл с зарезервированным символом в названии.";
+            public const string Lenght = "Невозможно выбрать файл с длиной имени больше 25 символов.";
+            public const string CleanQueue = "Невозможно добавить файл в очередь.";
+            public const string NameDir = "Неверное имя директории.";
+        }
+
         public static bool clickFile(string nameFile, string nameDir)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public static bool checkNameFile(string nameFile)
@@ -32,4 +41,6 @@ namespace laba3
             throw new NotImplementedException();
         }
     }
+
+    
 }

@@ -44,7 +44,7 @@ namespace UnitTestProject
             List<string> failName = new List<string>() { "CON", "PRN", "AUX", "NUL", "COM0", "COM1", "COM2", "COM3", "COM4",
                 "COM5", "COM6", "COM7", "COM8", "COM9", "LPT0", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9" };
 
-            string expectedExceptionMessage = "Невозможно использовать файл с зарезервированным именем.";
+            string expectedExceptionMessage = AddFileForm.ExceptionStrings.NameReserv;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
@@ -67,7 +67,7 @@ namespace UnitTestProject
 
             List<string> failSymbol = new List<string>() { "/", @"\", "|", "*", ":", "?", @"""", "<", ">" };
 
-            string expectedExceptionMessage = "Невозможно использовать файл с зарезервированным символом в названии.";
+            string expectedExceptionMessage = AddFileForm.ExceptionStrings.SymbolReserv;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
@@ -90,7 +90,7 @@ namespace UnitTestProject
 
             int max_lenght = 25;
 
-            string expectedExceptionMessage = "Невозможно выбрать файл с длиной имени больше 25 символов.";
+            string expectedExceptionMessage = AddFileForm.ExceptionStrings.Lenght;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
@@ -111,7 +111,7 @@ namespace UnitTestProject
         {
             List<bool> queue = new List<bool>() { true, true, true, true, true };
 
-            string expectedExceptionMessage = "Невозможно добавить файл в очередь.";
+            string expectedExceptionMessage = AddFileForm.ExceptionStrings.CleanQueue;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
@@ -132,7 +132,7 @@ namespace UnitTestProject
         {
             List<bool> queue = new List<bool>() { true, true, true, true, true };
 
-            string expectedExceptionMessage = "Невозможно добавить файл в очередь.";
+            string expectedExceptionMessage = AddFileForm.ExceptionStrings.NameDir;
 
             Exception? exception = Assert.Throws<Exception>(() =>
             {
