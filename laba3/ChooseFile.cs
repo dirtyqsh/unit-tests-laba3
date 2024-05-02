@@ -68,7 +68,7 @@ namespace laba3
         {
             int maxLenghtQueue = 5;
 
-            if (queue.Count == maxLenghtQueue)
+            if (queue.Count(item => item == true) >= maxLenghtQueue)
             {
                 throw new Exception(ExceptionStrings.CleanQueue);
             }
