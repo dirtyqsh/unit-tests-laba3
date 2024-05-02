@@ -26,5 +26,10 @@ namespace laba3
         {
             throw new NotImplementedException();
         }
+
+        public static bool checkList(List<bool> queue)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
