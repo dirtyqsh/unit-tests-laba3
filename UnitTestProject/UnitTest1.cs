@@ -57,10 +57,18 @@ namespace UnitTestProject
         /// Зарезервированный символ.
         /// Пользователь выбрал файл в названии которого содержится зарезервированный.
         /// </summary>
-        [Test]
-        public void T_003_clickFile_SymbolReserv()
+        [TestCase("complete*code")]
+        [TestCase("complete/code")]
+        [TestCase(@"complete\code")]
+        [TestCase("complete|code")]
+        [TestCase("complete>code")]
+        [TestCase("complete:code")]
+        [TestCase("complete?code")]
+        [TestCase(@"complete""code")]
+        [TestCase("complete<code")]
+        public void T_003_clickFile_SymbolReserv(string value)
         {
-            string nameFile = "complete*code";
+            string nameFile = value;
 
             string expectedExceptionMessage = AddFileForm.ExceptionStrings.SymbolReserv;
 
