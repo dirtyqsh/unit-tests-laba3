@@ -25,6 +25,7 @@ namespace laba3
             public const string Lenght = "Невозможно выбрать файл с длиной имени больше 25 символов.";
             public const string CleanQueue = "Невозможно добавить файл в очередь.";
             public const string NameDir = "Неверное имя директории.";
+            public const string ErrorSend = "Невозможно передать файл.";
         }
 
         public static bool clickFile(string nameFile, string nameDir)
@@ -75,7 +76,30 @@ namespace laba3
 
             return true;
         }
+
+        public ToTranslateControllerInterface controllerInterface = null;
+
+        public FileDataInterface clickToTranslate(string nameFile, string nameDir)
+        {
+            if (clickFile(nameFile, nameDir))
+            {
+                if (controllerInterface.tryTranslate())
+                {
+                    FileDataInterface fileData = controllerInterface.getNewFileData();
+
+                    controllerInterface.translate(fileData.NameFile);
+
+                    return fileData;
+                }
+                else
+                {
+                    throw new Exception(ExceptionStrings.ErrorSend);
+                }
+            }
+
+            return null;
+        }
     }
 
-    
+
 }
