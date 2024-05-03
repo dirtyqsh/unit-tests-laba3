@@ -137,5 +137,77 @@ namespace UnitTestProject
 
             Assert.AreEqual(expectedExceptionMessage, exception.Message);
         }
+
+        public class MockFileData : FileDataInterface
+        {
+            public string NameFile { get; set; }
+        }
+
+        public class MockToTranslateController_NoConnection : ToTranslateControllerInterface
+        {
+            public FileDataInterface getNewFileData() { throw new NotImplementedException(); }
+
+            public bool tryTranslate() { return false; }
+
+            public bool translate(string nameFile) { throw new NotImplementedException(); }
+
+        }
+
+        public class MockToTranslateController_OK : ToTranslateControllerInterface
+        {
+            public FileDataInterface getNewFileData() { return new MockFileData() { NameFile = "completecode.pdf" }; }
+
+            public bool tryTranslate() { return true; }
+
+            public bool translate(string nameFile) { return true; }
+
+        }
+
+        /// <summary>
+        /// Файл отправлен на перевод.
+        /// Процесс проверки и отправки успешный.
+        /// </summary>
+        [Test]
+        public void T_007_clickToTranslate_BasicFlow()
+        {
+            string nameFile = "completecode.pdf";
+
+            AddFileForm addFileForm = new AddFileForm();
+            addFileForm.controllerInterface = new MockToTranslateController_OK();
+            FileDataInterface fileData = null;
+
+            Assert.DoesNotThrow(() =>
+            {
+                fileData = addFileForm.clickToTranslate(nameFile);
+            });
+
+            Assert.IsNotNull(fileData);
+
+            Assert.AreEqual(fileData.NameFile, nameFile);
+        }
+
+        /// <summary>
+        /// Нет подключения к сервису.
+        /// Невозможно отправить файл.
+        /// </summary>
+        [Test]
+        public void T_008_clickToTranslate_NoConnection()
+        {
+            string nameFile = "completecode.pdf";
+
+            AddFileForm addFileForm = new AddFileForm();
+            addFileForm.controllerInterface = new MockToTranslateController_NoConnection();
+            String expectedExceptionMessage = AddFileForm.ExceptionStrings.NoConnection;
+
+            Exception? exception = Assert.Throws<Exception>(() =>
+            {
+                addFileForm.clickToTranslate(nameFile);
+            });
+
+
+            Assert.IsNotNull(exception);
+
+            Assert.AreEqual(expectedExceptionMessage, exception.Message);
+        }
     }
 }
