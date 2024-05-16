@@ -16,6 +16,8 @@ namespace laba3
         public AddFileForm()
         {
             InitializeComponent();
+
+            controllerInterface = ManageClass.GetControllerInterface();
         }
 
         public static class ExceptionStrings

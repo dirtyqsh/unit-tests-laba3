@@ -8,7 +8,7 @@ namespace laba3
 {
     public interface ToTranslateControllerInterface
     {
-        public bool tryTranslate() { return true; } // проерка на подлкючение к сервису
+        public bool tryTranslate(); // проерка на подлкючение к сервису
         public FileDataInterface getNewFileData();
         public bool translate(string nameFile);
     }
