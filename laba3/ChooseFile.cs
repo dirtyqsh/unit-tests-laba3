@@ -99,7 +99,28 @@ namespace laba3
 
             return null;
         }
+
+        private void FileButton_Click(object sender, EventArgs e)
+        {
+            ErrorLabel.Text = "";
+
+            try
+            {
+                string file = FileTextBox.Text;
+                FileDataInterface fileData = clickToTranslate(file);
+
+                ErrorLabel.Text = "Некорректный ввод файла " + fileData.NameFile;
+                if (MessageBox.Show("Некорректный ввод файла " + fileData.NameFile, "Внимание!") == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception exception)
+            {
+                ErrorLabel.Text = exception.Message;
+            }
+        }
+        }
+
+
     }
-
-
-}
