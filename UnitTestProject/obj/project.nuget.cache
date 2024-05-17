@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "GRDPRbIwpEiHaexwp/TXxeuYmrLSqP5OtXBUrRLJJfCw2dc1eEir7+4MgHilLba1br2eWQvZ/5KdFP9TXvXT7g==",
+  "dgSpecHash": "Hiy46VeuHvfA+zMyqzQ/QvoXInsv4MeymKMhclgltMzGwnm6vTSw6EA72ccH4SmIdXP2qohsK1lB2uZBlUOI9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\UnitTestProject\\UnitTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kloun\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\flaui.core\\4.0.0\\flaui.core.4.0.0.nupkg.sha512",
+    "C:\\Users\\kloun\\.nuget\\packages\\flaui.uia3\\4.0.0\\flaui.uia3.4.0.0.nupkg.sha512",
+    "C:\\Users\\kloun\\.nuget\\packages\\interop.uiautomationclient\\10.19041.0\\interop.uiautomationclient.10.19041.0.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
