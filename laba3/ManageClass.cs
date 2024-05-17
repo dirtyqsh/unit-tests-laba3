@@ -48,7 +48,7 @@ namespace laba3
 
             public bool tryTranslate() { return true; }
 
-            public bool translate(string nameFile) { fileData = new MockFileData() { NameFile = "completecode.pdf" }; return true; }
+            public bool translate(string nameFile) { fileData = new MockFileData() { NameFile = @"С:\completecode.pdf" }; return true; }
 
         }
     }

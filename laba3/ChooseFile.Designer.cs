@@ -40,9 +40,9 @@ namespace laba3
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Location = new System.Drawing.Point(13, 9);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(149, 20);
+            this.ErrorLabel.Size = new System.Drawing.Size(128, 20);
             this.ErrorLabel.TabIndex = 0;
-            this.ErrorLabel.Text = "Некорректный ввод";
+            this.ErrorLabel.Text = "Не выбран файл.";
             // 
             // FileLabel
             // 

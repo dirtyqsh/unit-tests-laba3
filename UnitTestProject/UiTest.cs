@@ -20,7 +20,7 @@ namespace UnitTestProject
         const string chooseFileTitleString = "Выбор файла";
         const string fileButtonString = "Выбрать файл";
         const string fileLabelString = "Файл";
-        const string errorLabelString = "Некорректный ввод";
+        const string errorLabelString = "Не выбран файл.";
 
         //automatisation-id 
         const string idFileButton = "FileButton";
@@ -76,7 +76,7 @@ namespace UnitTestProject
                 var retry = Retry.WhileException(() =>
                 {
                     Assert.AreEqual(AddFileForm.ExceptionStrings.EmptyEnter, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(M));
 
                 if (!retry.Success)
                 {
@@ -93,7 +93,7 @@ namespace UnitTestProject
                 retry = Retry.WhileException(() =>
                 {
                     Assert.AreEqual(AddFileForm.ExceptionStrings.NameReserv, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(M));
 
                 if (!retry.Success)
                 {
@@ -110,7 +110,7 @@ namespace UnitTestProject
                 retry = Retry.WhileException(() =>
                 {
                     Assert.AreEqual(AddFileForm.ExceptionStrings.SymbolReserv, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(M));
 
                 if (!retry.Success)
                 {
@@ -144,7 +144,7 @@ namespace UnitTestProject
                 retry = Retry.WhileException(() =>
                 {
                     Assert.AreEqual(AddFileForm.ExceptionStrings.CleanQueue, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(M));
 
                 if (!retry.Success)
                 {
@@ -161,7 +161,7 @@ namespace UnitTestProject
                 retry = Retry.WhileException(() =>
                 {
                     Assert.AreEqual(AddFileForm.ExceptionStrings.NameDir, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(M));
 
                 if (!retry.Success)
                 {
@@ -199,6 +199,52 @@ namespace UnitTestProject
                 if (!retry.Success)
                 {
                     Assert.Fail("Нет диалогового окна!");
+                }
+
+                app.Close();
+            }
+        }
+        [Test]
+        public void T_002_ChooseFile()
+        {
+            //Step #1
+            FlaUI.Core.Application app = FlaUI.Core.Application.Launch(PathTestingApp, "1");
+            using (var automation = new UIA3Automation())
+            {
+                var window = app.GetMainWindow(automation);
+                string title = window.Title;
+
+                Assert.AreEqual(chooseFileTitleString, title);
+
+                var fileButton = WaitForElement(() => window.FindFirstDescendant(cf => cf.ByAutomationId(idFileButton)).AsButton());
+
+                var fileTextBox = WaitForElement(() => window.FindFirstDescendant(cf => cf.ByAutomationId(idFileTextBox)).AsTextBox());
+
+                var fileLabel = WaitForElement(() => window.FindFirstDescendant(cf => cf.ByAutomationId(idFileLabel)).AsLabel());
+                var errorLabel = WaitForElement(() => window.FindFirstDescendant(cf => cf.ByAutomationId(idErrorLabel)).AsLabel());
+
+                Assert.AreEqual(fileButtonString, fileButton.AsLabel().Text);
+
+                Assert.AreEqual(fileLabelString, fileLabel.Text);
+                Assert.AreEqual(errorLabelString, errorLabel.Text);
+
+                Assert.AreEqual("", fileTextBox.Text);
+
+                //Step #2
+                fileTextBox.Enter(@"C:\completecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("NoConnection.png");
+
+                var retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NoConnection, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(M));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NoConnection, errorLabel.Text);
                 }
 
                 app.Close();
