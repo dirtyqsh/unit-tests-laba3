@@ -114,3 +114,5 @@ C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin\Debug\net5.0-windows7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin\Debug\net5.0-windows7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin\Debug\net5.0-windows7.0\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin\Debug\net5.0-windows7.0\FlaUI.UIA3.dll
+C:\Users\kloun\Desktop\study\ТП\Лаба3\unit-tests-laba3\UnitTestProject\bin\Debug\net5.0-windows7.0\Interop.UIAutomationClient.dll

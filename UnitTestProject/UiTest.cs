@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Tools;
 using FlaUI.UIA3;
+using laba3;
 using NUnit.Framework;
 
 namespace UnitTestProject
@@ -65,6 +66,140 @@ namespace UnitTestProject
                 Assert.AreEqual(errorLabelString, errorLabel.Text);
 
                 Assert.AreEqual("", fileTextBox.Text);
+
+
+                //Step #2
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("EmptyEnter.png");
+
+                var retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.EmptyEnter, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.EmptyEnter, errorLabel.Text);
+                }
+
+                //Step #3
+                fileTextBox.Enter(@"C:\completecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("NameReserv.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NameReserv, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NameReserv, errorLabel.Text);
+                }
+
+                //Step #4
+                fileTextBox.Enter(@"C:\complete*code.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("SymbolReserv.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.SymbolReserv, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.SymbolReserv, errorLabel.Text);
+                }
+
+                //Step #5
+                fileTextBox.Enter(@"C:\completecodecompletecodecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("Lenght.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.Lenght, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.Lenght, errorLabel.Text);
+                }
+
+                //Step #6
+                fileTextBox.Enter(@"C:\completecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("Queue.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.CleanQueue, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.CleanQueue, errorLabel.Text);
+                }
+
+                //Step #7
+                fileTextBox.Enter(@"hello:\hellooo-!\completecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("NameDir.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NameDir, errorLabel.Text);
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.AreEqual(AddFileForm.ExceptionStrings.NameDir, errorLabel.Text);
+                }
+
+                //Step #8
+                fileTextBox.Enter(@"C:\completecode.pdf");
+
+                fileButton.Click();
+                System.Threading.Thread.Sleep(1000);
+                window.CaptureToFile("Ok.png");
+
+                retry = Retry.WhileException(() =>
+                {
+                    var msg = window.ModalWindows.FirstOrDefault().AsWindow();
+
+                    Assert.NotNull(msg);
+
+                    var message = msg.FindFirstChild(cf => cf.ByText("Файл успешно выбран")).AsLabel();
+
+                    Assert.NotNull(message);
+
+                    //Step #13
+                    var yesButton = msg.FindFirstChild(cf => cf.ByName("ОК")).AsButton();
+
+                    Assert.NotNull(yesButton);
+
+                    msg.CaptureToFile("okdialog.png");
+
+                    yesButton.Click();
+
+                }, TimeSpan.FromMilliseconds(1000));
+
+                if (!retry.Success)
+                {
+                    Assert.Fail("Нет диалогового окна!");
+                }
 
                 app.Close();
             }

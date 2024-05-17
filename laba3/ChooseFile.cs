@@ -28,6 +28,7 @@ namespace laba3
             public const string CleanQueue = "Невозможно добавить файл в очередь.";
             public const string NameDir = "Неверное имя директории.";
             public const string NoConnection = "Невозможно передать файл.";
+            public const string EmptyEnter = "Не выбран файл.";
         }
 
         public static bool clickFile(string nameFile, string nameDir)
@@ -49,7 +50,7 @@ namespace laba3
 
             int maxLenghtName = 25;
 
-            if (failName.Contains(nameFile))
+            if (failName.Any(nameFile.Contains))
             {
                 throw new Exception(ExceptionStrings.NameReserv);
             }
