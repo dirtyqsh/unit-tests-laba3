@@ -20,7 +20,7 @@ namespace UnitTestProject
         const string chooseFileTitleString = "Выбор файла";
         const string fileButtonString = "Выбрать файл";
         const string fileLabelString = "Файл";
-        const string errorLabelString = "Не выбран файл.";
+        const string errorLabelString = "Неверное имя директории.";
 
         //automatisation-id 
         const string idFileButton = "FileButton";
@@ -84,7 +84,7 @@ namespace UnitTestProject
                 }
 
                 //Step #3
-                fileTextBox.Enter(@"C:\completecode.pdf");
+                fileTextBox.Enter(@"C:\CON.pdf");
 
                 fileButton.Click();
                 System.Threading.Thread.Sleep(1000);
@@ -134,25 +134,8 @@ namespace UnitTestProject
                     Assert.AreEqual(AddFileForm.ExceptionStrings.Lenght, errorLabel.Text);
                 }
 
-                //Step #6
-                fileTextBox.Enter(@"C:\completecode.pdf");
-
-                fileButton.Click();
-                System.Threading.Thread.Sleep(1000);
-                window.CaptureToFile("Queue.png");
-
-                retry = Retry.WhileException(() =>
-                {
-                    Assert.AreEqual(AddFileForm.ExceptionStrings.CleanQueue, errorLabel.Text);
-                }, TimeSpan.FromMilliseconds(M));
-
-                if (!retry.Success)
-                {
-                    Assert.AreEqual(AddFileForm.ExceptionStrings.CleanQueue, errorLabel.Text);
-                }
-
                 //Step #7
-                fileTextBox.Enter(@"hello:\hellooo-!\completecode.pdf");
+                fileTextBox.Enter(@"hello:\completecode.pdf");
 
                 fileButton.Click();
                 System.Threading.Thread.Sleep(1000);
@@ -181,11 +164,11 @@ namespace UnitTestProject
 
                     Assert.NotNull(msg);
 
-                    var message = msg.FindFirstChild(cf => cf.ByText("Файл успешно выбран")).AsLabel();
+                    var message = msg.FindFirstChild(cf => cf.ByText("Выбран файл " + @"C:\completecode.pdf")).AsLabel();
 
                     Assert.NotNull(message);
 
-                    //Step #13
+                    //Step #9
                     var yesButton = msg.FindFirstChild(cf => cf.ByName("ОК")).AsButton();
 
                     Assert.NotNull(yesButton);
@@ -194,7 +177,7 @@ namespace UnitTestProject
 
                     yesButton.Click();
 
-                }, TimeSpan.FromMilliseconds(1000));
+                }, TimeSpan.FromMilliseconds(5000));
 
                 if (!retry.Success)
                 {

@@ -8,7 +8,8 @@ namespace laba3
 {
     public static class ManageClass
     {
-        public static int index = 3;
+        public static int index = 2;
+
 
         public static ToTranslateControllerInterface GetControllerInterface()
         {
@@ -19,7 +20,7 @@ namespace laba3
                 case 1: return new MockToTranslateController_NoConnection(); break;
                 case 2: return new MockToTranslateController_OK(); break;
             }
-            return null;
+            return null; // ошибка тут
 #else
             throw new NotImplementedException();
 #endif

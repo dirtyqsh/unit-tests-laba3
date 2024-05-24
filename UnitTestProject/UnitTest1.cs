@@ -58,8 +58,6 @@ namespace UnitTestProject
         /// ѕользователь выбрал файл в названии которого содержитс€ зарезервированный.
         /// </summary>
         [TestCase("complete*code")]
-        [TestCase("complete/code")]
-        [TestCase(@"complete\code")]
         [TestCase("complete|code")]
         [TestCase("complete>code")]
         [TestCase("complete:code")]
@@ -163,7 +161,7 @@ namespace UnitTestProject
 
         public class MockToTranslateController_OK : ToTranslateControllerInterface
         {
-            public FileDataInterface getNewFileData() { return new MockFileData() { NameFile = "completecode.pdf" }; }
+            public FileDataInterface getNewFileData() { return new MockFileData() { NameFile = @"C:\completecode.pdf" }; }
 
             public bool tryTranslate() { return true; }
 
@@ -178,7 +176,7 @@ namespace UnitTestProject
         [Test]
         public void T_007_clickToTranslate_BasicFlow()
         {
-            string nameFile = "completecode.pdf";
+            string nameFile = @"C:\completecode.pdf";
 
             AddFileForm addFileForm = new AddFileForm();
             addFileForm.controllerInterface = new MockToTranslateController_OK();
@@ -201,7 +199,7 @@ namespace UnitTestProject
         [Test]
         public void T_008_clickToTranslate_NoConnection()
         {
-            string nameFile = "completecode.pdf";
+            string nameFile = @"C:\completecode.pdf";
 
             AddFileForm addFileForm = new AddFileForm();
             addFileForm.controllerInterface = new MockToTranslateController_NoConnection();

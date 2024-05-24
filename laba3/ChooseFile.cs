@@ -28,7 +28,7 @@ namespace laba3
             public const string CleanQueue = "Невозможно добавить файл в очередь.";
             public const string NameDir = "Неверное имя директории.";
             public const string NoConnection = "Невозможно передать файл.";
-            public const string EmptyEnter = "Не выбран файл.";
+            public const string EmptyEnter = "Неверное имя директории.";
         }
 
         public static bool clickFile(string nameFile, string nameDir)
@@ -41,14 +41,17 @@ namespace laba3
             return true;
         }
 
-        public static bool checkNameFile(string nameFile)
+        public static bool checkNameFile(string fullPath)
         {
             List<string> failName = new List<string>() { "CON", "PRN", "AUX", "NUL", "COM0", "COM1", "COM2", "COM3", "COM4",
                 "COM5", "COM6", "COM7", "COM8", "COM9", "LPT0", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9" };
 
-            List<string> failSymbol = new List<string>() { "/", @"\", "|", ":", "*", "?", @"""", "<", ">" };
+            List<string> failSymbol = new List<string>() { "|", ":", "*", "?", @"""", "<", ">" };
 
             int maxLenghtName = 25;
+
+            string nameFile = Path.GetFileName(fullPath);
+            string nameDir = Path.GetDirectoryName(fullPath);
 
             if (failName.Any(nameFile.Contains))
             {
@@ -63,6 +66,11 @@ namespace laba3
             if (nameFile.Length >= maxLenghtName)
             {
                 throw new Exception(ExceptionStrings.Lenght);
+            }
+
+            if (!Directory.Exists(nameDir))
+            {
+                throw new Exception(ExceptionStrings.NameDir);
             }
 
             return true;
@@ -112,8 +120,8 @@ namespace laba3
                 string file = FileTextBox.Text;
                 FileDataInterface fileData = clickToTranslate(file);
 
-                ErrorLabel.Text = "Некорректный ввод файла " + fileData.NameFile;
-                if (MessageBox.Show("Некорректный ввод файла " + fileData.NameFile, "Внимание!") == DialogResult.OK)
+                ErrorLabel.Text = "Выбран файл " + fileData.NameFile;
+                if (MessageBox.Show("Выбран файл " + fileData.NameFile, "Внимание!") == DialogResult.OK)
                 {
                     this.Close();
                 }
