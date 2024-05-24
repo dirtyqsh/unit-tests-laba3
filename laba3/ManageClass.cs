@@ -43,14 +43,13 @@ namespace laba3
 
         public class MockToTranslateController_OK : ToTranslateControllerInterface
         {
-            MockFileData fileData;
+            MockFileData fileData = new MockFileData() { NameFile = @"С:\completecode.pdf" };
 
             public FileDataInterface getNewFileData() { return fileData; }
 
             public bool tryTranslate() { return true; }
 
-            public bool translate(string nameFile) { fileData = new MockFileData() { NameFile = @"С:\completecode.pdf" }; return true; }
-
+            public bool translate(string nameFile) { return true; }
         }
     }
 }

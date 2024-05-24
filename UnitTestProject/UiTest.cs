@@ -156,7 +156,7 @@ namespace UnitTestProject
 
                 fileButton.Click();
                 System.Threading.Thread.Sleep(1000);
-                window.CaptureToFile("Ok.png");
+                window.CaptureToFile("ok.png");
 
                 retry = Retry.WhileException(() =>
                 {

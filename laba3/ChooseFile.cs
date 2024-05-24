@@ -90,9 +90,10 @@ namespace laba3
 
         public ToTranslateControllerInterface controllerInterface = null;
 
-        public FileDataInterface clickToTranslate(string nameFile)
+        public FileDataInterface clickToTranslate(string fullPath)
         {
-            if (checkNameFile(nameFile))
+            string nameFile = Path.GetFileName(fullPath);
+            if (checkNameFile(fullPath))
             {
                 if (controllerInterface.tryTranslate())
                 {
