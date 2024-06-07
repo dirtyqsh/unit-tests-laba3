@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\laba3\\laba3.csproj",
+      "projectUniqueName": "C:\\Users\\kloun\\Desktop\\study\\TP\\Laba3\\unit-tests-laba3\\laba3\\laba3.csproj",
       "projectName": "laba3",
-      "projectPath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\laba3\\laba3.csproj",
+      "projectPath": "C:\\Users\\kloun\\Desktop\\study\\TP\\Laba3\\unit-tests-laba3\\laba3\\laba3.csproj",
       "packagesPath": "C:\\Users\\kloun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\laba3\\obj\\",
+      "outputPath": "C:\\Users\\kloun\\Desktop\\study\\TP\\Laba3\\unit-tests-laba3\\laba3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kloun\\AppData\\Roaming\\NuGet\\NuGet.Config",

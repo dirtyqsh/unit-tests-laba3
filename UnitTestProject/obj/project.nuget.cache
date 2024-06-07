@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hiy46VeuHvfA+zMyqzQ/QvoXInsv4MeymKMhclgltMzGwnm6vTSw6EA72ccH4SmIdXP2qohsK1lB2uZBlUOI9w==",
+  "dgSpecHash": "Hr6hNCPKU5XYKY3pR9R1sU1NOaIEBGMsiFTQ62SIyp2/VDLowg/ThAfjZgv6u6wIDg7rxdRqS2mpu5vb+jtD6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kloun\\Desktop\\study\\ТП\\Лаба3\\unit-tests-laba3\\UnitTestProject\\UnitTestProject.csproj",
+  "projectFilePath": "C:\\Users\\kloun\\Desktop\\study\\TP\\Laba3\\unit-tests-laba3\\UnitTestProject\\UnitTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kloun\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\kloun\\.nuget\\packages\\flaui.core\\4.0.0\\flaui.core.4.0.0.nupkg.sha512",

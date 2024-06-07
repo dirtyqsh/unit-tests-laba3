@@ -121,8 +121,8 @@ namespace laba3
                 string file = FileTextBox.Text;
                 FileDataInterface fileData = clickToTranslate(file);
 
-                ErrorLabel.Text = "Выбран файл " + fileData.NameFile;
-                if (MessageBox.Show("Выбран файл " + fileData.NameFile, "Внимание!") == DialogResult.OK)
+                ErrorLabel.Text = "Выбран файл " + file;
+                if (MessageBox.Show("Выбран файл " + file, "Внимание!") == DialogResult.OK)
                 {
                     this.Close();
                 }
